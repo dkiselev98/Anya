@@ -14,5 +14,85 @@
 		"answer2": "Саша шкафкупе",
 		"answer3": "Лера",
 		"correctAnswer": 3
+	},
+	{
+		"id": 2,
+		"question": "Какое твоё любимое китайское лекарство?",
+		"answer1": "Сяояо сибаояо",
+		"answer2": "Сяо сибао яо",
+		"answer3": "热水",
+		"correctAnswer": 2
+	},
+	{
+		"id": 3,
+		"question": "Какой наш любимый напиток?",
+		"answer1": "Морсэль",
+		"answer2": "Густав",
+		"answer3": "Алым",
+		"correctAnswer": 1
+	},
+	{
+		"id": 4,
+		"question": "Я не буду у тебя на _____ стоять. Какое слово мы пропустили?",
+		"answer1": "Лягушке",
+		"answer2": "Поводке",
+		"answer3": "Могиле",
+		"correctAnswer": 2
+	},
+	{
+		"id": 5,
+		"question": "За какой номерок мы проголосим?",
+		"answer1": "53",
+		"answer2": "42",
+		"answer3": "Ни за какой",
+		"correctAnswer": 1
+	},
+	{
+		"id": 6,
+		"question": "Как это называется?",
+		"answer1": "Век мемов",
+		"answer2": "Кек мева",
+		"answer3": "Мем века",
+		"correctAnswer": 3
+	},
+	{
+		"id": 7,
+		"question": "Кто видел мой мяч?",
+		"answer1": "Даниил",
+		"answer2": "Ира",
+		"answer3": "Никто",
+		"correctAnswer": 3
+	},
+	{
+		"id": 8,
+		"question": "Что за?",
+		"answer1": "Прикол",
+		"answer2": "Хар",
+		"answer3": "Обезьяна",
+		"correctAnswer": 2
+	},
+	{
+		"id": 9,
+		"question": "Даша",
+		"answer1": "Шторм",
+		"answer2": "Буря",
+		"answer3": "Пулля",
+		"correctAnswer": 2
+	},
+	{
+		"id": 10,
+		"question": "Водка - ",
+		"answer1": "Уродка",
+		"answer2": "Мерзко",
+		"answer3": "Яд",
+		"correctAnswer": 3
+	},
+	{
+		"id": 11,
+		"question": "$KBEРНО$ЛОВЫ feat.",
+		"answer1": "MC Пиздоганно",
+		"answer2": "Филипп Киркоров",
+		"answer3": "Pitbull",
+		"correctAnswer": 1
 	}
 	]
