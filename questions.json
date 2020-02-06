@@ -147,7 +147,7 @@
 		"id": 17,
 		"question": "Куда деньги скидываем за нетфликс?",
 		"answer1": "Никуда",
-		"answer2": "В щеночку копилку",
+		"answer2": "В Пиггибэнк",
 		"answer3": "На альфа банк Даниилу по ссылке ниже",
 		"correctAnswer": 3
 	},
@@ -161,10 +161,10 @@
 	},
 	{
 		"id": 19,
-		"question": "Вопросик от Жени?",
-		"answer1": "да",
-		"answer2": "да",
-		"answer3": "пизда",
+		"question": "Как нельзя называть отряд?",
+		"answer1": "Funny Kids",
+		"answer2": "Kunny Fids",
+		"answer3": "Biggest Retards",
 		"correctAnswer": 1
 	},
 	{
