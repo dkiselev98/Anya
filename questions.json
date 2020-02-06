@@ -120,14 +120,6 @@
 		"correctAnswer": 2
 	},
 	{
-		"id": 14,
-		"question": "Кирилл",
-		"answer1": "Попил",
-		"answer2": "Олег",
-		"answer3": "Вон там стоит",
-		"correctAnswer": 2
-	},
-	{
 		"id": 15,
 		"question": "Успешны",
 		"answer1": "Завтра",
