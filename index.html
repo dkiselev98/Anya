@@ -26,13 +26,21 @@
       justify-content: center;
     }
     
+    .img-wrapper {
+      position: relative;
+    }
+    .img-wrapper:after {
+      content: '';
+      position: absolute;
+      bottom: 0;top:0;right:0;left:0;
+      box-shadow: 0 0 8px 8px var(--background-color) inset;
+    }
     img {
         display: block;
   max-width: 100%;
   max-height: calc(100vh - 14em);
   width: auto;
   height: auto;
-     box-shadow: 0 0 8px 8px var(--background-color) inset;
     }
     .c > * {
       flex: 1 1 auto;
@@ -112,7 +120,11 @@ if (index != -1) {
   </script>
   <body hidden>
     <div class="c">
-      <div class="img-container"><img id="picture" src="picture.jpg" /></div>
+      <div class="img-container">
+        <div class="img-wrapper">
+          <img id="picture" src="picture.jpg" />
+        </div>
+      </div>
       <div class="question-area">
         <p id="q">Вопрос: что это?</p>
         <ul>
