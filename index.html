@@ -87,8 +87,8 @@
       box-shadow: 0 0 5px lightblue;
     }
     
-    
-    
+
+
     body[hidden] {
        display: none;
     }
@@ -131,7 +131,31 @@
           document.querySelector("#answer2").onclick =
           document.querySelector("#answer3").onclick = function (event) {
             event.preventDefault();
-            setQuestion(i + 1);
+            if (q.correctAnswer.toString() !== event.target.id.slice('#answer'.length)) {
+              document.querySelector("#picture").src = 'images/incorrect.jpg';
+              document.querySelector("#picture").animate([{
+                'boxShadow': '0 0 3px 12px red'
+              }, {
+                'boxShadow': '0 0 3px 12px transparent'
+              }], {
+                duration: 1000,
+                iterations: 3
+              });
+              event.target.animate([{
+                'boxShadow': '0 0 3px 3px red'
+              }, {
+                'boxShadow': '0 0 3px 3px transparent'
+              }], {
+                duration: 1000,
+                iterations: 3
+              });
+              event.target.setAttribute('title', 'Неправильно!');
+              setTimeout(function () {
+                event.target.setAttribute('title', '');
+              }, 2000);
+            } else {
+              setQuestion(i + 1);
+            }
           };
         }, animationDuration / 2);
       };
