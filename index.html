@@ -93,27 +93,37 @@
 
       var setQuestion = function (i) {
 
+        var animationDuration = 200;
         if (index != -1) {
-          document.body.animate([{opacity: 1}, {opacity: 0}, {opacity: 1}], {duration: 200});
+          document.body.animate([{opacity: 1}, {opacity: 0}, {opacity: 1}], {duration: animationDuration});
+        } else {
+          animationDuration = 0;
         }
-
+        
         index = i;
         var q = questions[index];
-        document.querySelector("#q").textContent = q.question;
-        document.querySelector("#picture").src = 'images/' + (q.id + 1) + '.jpg';
-        document.querySelector("#picture").onerror = function () {
-          document.querySelector("#picture").src = 'images/99.jpg';
-        };
-        document.querySelector("#answer1").textContent = q.answer1;
-        document.querySelector("#answer2").textContent = q.answer2;
-        document.querySelector("#answer3").textContent = q.answer3;
+        var nextImageSrc = 'images/' + (q.id + 1) + '.jpg';
         
-        document.querySelector("#answer1").onclick =
-        document.querySelector("#answer2").onclick =
-        document.querySelector("#answer3").onclick = function (event) {
-          event.preventDefault();
-          setQuestion(i + 1);
-        };
+        var preload = new Image();
+        preload.src = nextImageSrc;
+
+        window.setTimeout(function () {
+          document.querySelector("#q").textContent = q.question;
+          document.querySelector("#picture").src = nextImageSrc;
+          document.querySelector("#picture").onerror = function () {
+            document.querySelector("#picture").src = 'images/99.jpg';
+          };
+          document.querySelector("#answer1").textContent = q.answer1;
+          document.querySelector("#answer2").textContent = q.answer2;
+          document.querySelector("#answer3").textContent = q.answer3;
+          
+          document.querySelector("#answer1").onclick =
+          document.querySelector("#answer2").onclick =
+          document.querySelector("#answer3").onclick = function (event) {
+            event.preventDefault();
+            setQuestion(i + 1);
+          };
+        }, animationDuration / 2);
       };
 
       setQuestion(0);
