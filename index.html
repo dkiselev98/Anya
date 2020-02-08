@@ -151,17 +151,25 @@
                 a.download = name;
                 document.body.appendChild(a);
                 a.click();
+              } else if (event.target.id === "answer2") {
+              
+              } else if (event.target.id === "answer3") {
+              
               }
             }
             
             if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
+              var old = document.querySelector("#picture").src;
               document.querySelector("#picture").src = 'images/incorrect.jpg';
+              window.setTimeout(function () {
+                document.querySelector("#picture").src = old;
+              }, 2000);
               a1 = document.querySelector("#picture").animate([{
                 'boxShadow': '0 0 3px 12px darkred'
               }, {
                 'boxShadow': '0 0 3px 12px transparent'
               }], {
-                duration: 1000,
+                duration: 2000 / 3,
                 iterations: 3
               });
               a2 = event.target.animate([{
@@ -169,7 +177,7 @@
               }, {
                 'boxShadow': '0 0 3px 3px transparent'
               }], {
-                duration: 1000,
+                duration: 2000 / 3,
                 iterations: 3
               });
               event.target.setAttribute('title', 'Неправильно!');
