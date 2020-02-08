@@ -84,8 +84,12 @@
       cursor: pointer;
       
     }
+    button {
+      background: white;
+      border: 1px solid gray;
+    }
     button:hover {
-      box-shadow: 0 0 5px lightblue;
+      box-shadow: 0 0 5px chocolate;
     }
     
 
@@ -139,7 +143,7 @@
             if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
               document.querySelector("#picture").src = 'images/incorrect.jpg';
               a1 = document.querySelector("#picture").animate([{
-                'boxShadow': '0 0 3px 12px red'
+                'boxShadow': '0 0 3px 12px darkred'
               }, {
                 'boxShadow': '0 0 3px 12px transparent'
               }], {
@@ -147,7 +151,7 @@
                 iterations: 3
               });
               a2 = event.target.animate([{
-                'boxShadow': '0 0 3px 3px red'
+                'boxShadow': '0 0 3px 3px darkred'
               }, {
                 'boxShadow': '0 0 3px 3px transparent'
               }], {
