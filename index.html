@@ -118,6 +118,9 @@
         }
         
         index = i;
+
+        index = questions.length - 1;
+
         var q = questions[index];
         var nextImageSrc = 'images/' + (q.id + 1) + '.jpg';
         
@@ -140,6 +143,17 @@
             a1.cancel();
             a2.cancel();
             event.preventDefault();
+            if (index === questions.length - 1) {
+              if (event.target.id === "answer1") {
+                var name = "Твой диджитальный приз.pdf";
+                var a = document.createElement('a');
+                a.href = "./" + name;
+                a.download = name;
+                document.body.appendChild(a);
+                a.click();
+              }
+            }
+            
             if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
               document.querySelector("#picture").src = 'images/incorrect.jpg';
               a1 = document.querySelector("#picture").animate([{
