@@ -119,7 +119,10 @@
         
         index = i;
 
-        index = questions.length - 1;
+        if (location.hash === '#end') {
+          index = questions.length - 1;
+          location.hash = '#';
+        }
 
         var q = questions[index];
         var nextImageSrc = 'images/' + (q.id + 1) + '.jpg';
