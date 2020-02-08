@@ -146,11 +146,13 @@
             if (index === questions.length - 1) {
               if (event.target.id === "answer1") {
                 var name = "Твой диджитальный приз.pdf";
-                var a = document.createElement('a');
+                window.open(name);
+                /*var a = document.createElement('a');
                 a.href = "./" + name;
                 a.download = name;
                 document.body.appendChild(a);
                 a.click();
+                */
               } else if (event.target.id === "answer2") {
                 setQuestion(0);
               } else if (event.target.id === "answer3") {
