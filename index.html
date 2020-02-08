@@ -135,6 +135,9 @@
         if (location.hash === '#end') {
           index = questions.length - 1;
           location.hash = '#';
+        } else if (location.hash === "#end1") {
+          index = questions.length - 2;
+          location.hash = '#';
         }
 
         var q = questions[index];
@@ -214,7 +217,7 @@
               }, 2000);
             } else {
               new Audio('./correct.mp3').play();
-              setQuestion(i + 1);
+              setQuestion(index + 1);
             }
           };
         }, animationDuration / 2);
