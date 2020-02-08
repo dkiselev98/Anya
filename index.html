@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="NOODP">
-    <title>
-Аня Садчикова С Днем Рождения!
-</title>
+        <title>Аня Садчикова С Днем Рождения!</title>
   </head>
   <style>
 
@@ -103,6 +101,13 @@
     body[hidden] {
        display: none;
     }
+    body.fw canvas {
+      opacity: 1;
+    }
+    canvas {
+      opacity: 0;
+      transition: opacity 1s;
+    }
   </style>
   <script>
     fetch('./questions.json').then(function (response) {
@@ -110,6 +115,8 @@
     }).then(function (json) {
     var a1 = document.body.animate([], 1);
     var a2 = document.body.animate([], 1);
+    var a3 = new Audio('song.mp3');
+    
     document.body.hidden = false;
       var questions = json;
       var index = -1;
@@ -136,7 +143,15 @@
         var preload = new Image();
         preload.src = nextImageSrc;
 
+        if (index === questions.length - 1) {
+          a3.play();
+        }
         window.setTimeout(function () {
+          if (index === questions.length - 1) {
+            document.body.classList.toggle('fw', true);
+            window.loop();
+          }
+        
           document.querySelector("#q").textContent = q.question;
           document.querySelector("#picture").src = nextImageSrc;
           document.querySelector("#picture").onerror = function () {
@@ -163,6 +178,8 @@
                 a.click();
                 */
               } else if (event.target.id === "answer2") {
+                a3.pause();
+                document.body.classList.toggle('fw', false);
                 setQuestion(0);
               } else if (event.target.id === "answer3") {
                 document.body.animate([{opacity: 1}, {opacity: 0}], 500);
@@ -207,7 +224,18 @@
       
     });
   </script>
+  <style>
+    canvas {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
   <body hidden>
+    <script src="fw.js" defer></script>
     <div class="c">
       <div class="img-container">
         <div class="img-wrapper">
@@ -223,6 +251,7 @@
         </ul>
       </div>
     </div>
+    <canvas id="canvas">Your browser does not support the 'canvas' element.</canvas>
   </body>
 </html>
 
