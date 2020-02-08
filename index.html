@@ -97,6 +97,8 @@
     fetch('./questions.json').then(function (response) {
       return response.json();
     }).then(function (json) {
+    var a1 = document.body.animate([], 1);
+    var a2 = document.body.animate([], 1);
     document.body.hidden = false;
       var questions = json;
       var index = -1;
@@ -130,10 +132,12 @@
           document.querySelector("#answer1").onclick =
           document.querySelector("#answer2").onclick =
           document.querySelector("#answer3").onclick = function (event) {
+            a1.cancel();
+            a2.cancel();
             event.preventDefault();
-            if (q.correctAnswer.toString() !== event.target.id.slice('#answer'.length)) {
+            if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
               document.querySelector("#picture").src = 'images/incorrect.jpg';
-              document.querySelector("#picture").animate([{
+              a1 = document.querySelector("#picture").animate([{
                 'boxShadow': '0 0 3px 12px red'
               }, {
                 'boxShadow': '0 0 3px 12px transparent'
@@ -141,7 +145,7 @@
                 duration: 1000,
                 iterations: 3
               });
-              event.target.animate([{
+              a2 = event.target.animate([{
                 'boxShadow': '0 0 3px 3px red'
               }, {
                 'boxShadow': '0 0 3px 3px transparent'
