@@ -152,13 +152,12 @@
                 document.body.appendChild(a);
                 a.click();
               } else if (event.target.id === "answer2") {
-              
+                setQuestion(0);
               } else if (event.target.id === "answer3") {
-              
+                document.body.animate([{opacity: 1}, {opacity: 0}], 500);
+                location.href = 'https://google.com';
               }
-            }
-            
-            if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
+            } else if (q.correctAnswer.toString() !== event.target.id.slice('answer'.length)) {
               var old = document.querySelector("#picture").src;
               document.querySelector("#picture").src = 'images/incorrect.jpg';
               window.setTimeout(function () {
