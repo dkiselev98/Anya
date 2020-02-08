@@ -19,6 +19,7 @@
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
+      padding: 1em;
     }
     .img-container {
       display: flex;
@@ -37,10 +38,10 @@
     }
     img {
         display: block;
-  max-width: 100%;
-  max-height: calc(100vh - 14em);
-  width: auto;
-  height: auto;
+        max-width: 100%;
+        max-height: calc(100vh - 14em);
+        width: auto;
+        height: auto;
     }
     .c > * {
       flex: 1 1 auto;
@@ -52,8 +53,8 @@
       margin: auto;
       list-style-type: none;
       display: flex;
-      flex-direction: column;
-      width: 200px;
+      flex-direction: row;
+      width: 50vw;
       padding: 0;
     }
     .question-area {
@@ -62,7 +63,8 @@
       padding-top: 0;
     }
     .question-area li {
-      flex: 1 1 auto;
+      flex: 1 1 200px;
+      margin: 0.5em;
     }
     .question-area button {
       width: 100%;
@@ -91,9 +93,9 @@
 
       var setQuestion = function (i) {
 
-if (index != -1) {
-        document.body.animate([{opacity: 1}, {opacity: 0}, {opacity: 1}], {duration: 200});
-}
+        if (index != -1) {
+          document.body.animate([{opacity: 1}, {opacity: 0}, {opacity: 1}], {duration: 200});
+        }
 
         index = i;
         var q = questions[index];
