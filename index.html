@@ -56,7 +56,8 @@
     .c > * {
       flex: 1 1 auto;
     }
-    p {
+    p, h1 {
+      margin: auto;
       text-align: center;
     }
     ul {
@@ -93,11 +94,6 @@
        display: none;
     }
   </style>
-  
-  <title>
-Аня Садчикова С Днем Рождения!
-</title>
-  
   <script>
     fetch('./questions.json').then(function (response) {
       return response.json();
@@ -181,7 +177,7 @@
         </div>
       </div>
       <div class="question-area">
-        <p id="q">Вопрос: что это?</p>
+        <h1 id="q">Вопрос: что это?</h1>
         <ul>
           <li><button id="answer1">Ответ 1</button></li>
           <li><button id="answer2">Ответ 2</button></li>
